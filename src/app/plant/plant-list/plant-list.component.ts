@@ -18,6 +18,10 @@ export class PlantListComponent implements OnInit {
     this.plantService.getPlants().subscribe(plants => this.plants = plants);
   }
 
+  countPlants(type: string): number {
+    return this.plants.filter(p => p.tipo === type).length;
+  }
+
   ngOnInit() {
     this.getPlants();
   }
